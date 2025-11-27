@@ -3,32 +3,36 @@ import { Heart, Music, Sun, Palette, Gem } from "lucide-react";
 
 const timeline = [
   {
+    icon: Palette,
+    title: "Shagun & Mehndi",
+    date: "February 2, 2026",
+    description: "Adorning hands with intricate henna designs and blessings from family, symbolizing love and prosperity.",
+    color: "text-green-600",
+    image: "/niharika-mehadi-1.0.png",
+  },
+  {
     icon: Gem,
     title: "Engagement",
     date: "February 5, 2026",
     description: "The beginning of our forever. Join us as we exchange rings and promises.",
     color: "text-accent",
+    image: "/engagement-1.png",
   },
   {
     icon: Music,
     title: "Sangeet Night",
-    date: "February 6, 2026",
+    date: "February 5, 2026",
     description: "A night of music, dance, and celebration. Put on your dancing shoes!",
     color: "text-primary",
+    image: "/niharika-sangeet-1.0.png",
   },
   {
     icon: Sun,
     title: "Haldi Ceremony",
-    date: "February 7, 2026",
-    description: "A splash of yellow and a glow of love. Blessing the couple with turmeric and joy.",
+    date: "February 6, 2026",
+    description: "A splash of yellow and a glow of love. Blessing the couple with turmeric and joy in the morning.",
     color: "text-yellow-500",
-  },
-  {
-    icon: Palette,
-    title: "Mehndi",
-    date: "February 8, 2026",
-    description: "Adorning hands with intricate henna designs, symbolizing love and prosperity.",
-    color: "text-green-600",
+    image: "/niharika-haldi-1.0.png",
   },
   {
     icon: Heart,
@@ -36,6 +40,7 @@ const timeline = [
     date: "February 6, 2026",
     description: "The big day! Witness our union as we tie the knot and start our journey together.",
     color: "text-red-500",
+    image: "/niharika-bride-1.0.png",
   },
 ];
 
@@ -80,6 +85,15 @@ const LoveStory = () => {
                   className={`w-[calc(100%-3rem)] ml-12 md:ml-0 md:w-5/12 bg-card rounded-2xl p-6 shadow-lg border border-border ${isEven ? "md:mr-auto" : "md:ml-auto"
                     }`}
                 >
+                  {/* Event Image */}
+                  <div className="mb-4 rounded-xl overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-48 md:h-56 object-cover"
+                    />
+                  </div>
+
                   <div className="flex items-center gap-4 mb-4">
                     <div className={`p-3 rounded-full bg-primary/10 ${item.color}`}>
                       <Icon className="w-6 h-6" />
