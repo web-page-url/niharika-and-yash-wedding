@@ -146,14 +146,14 @@ const Hero = () => {
             transition={{ delay: 1.2 }}
             className="pt-6 sm:pt-8 px-4"
           >
-            <Button
+            {/* <Button
               variant="hero"
               size="lg"
               className="text-base sm:text-lg w-full sm:w-auto"
               onClick={() => document.getElementById("details")?.scrollIntoView({ behavior: "smooth" })}
             >
               View Details
-            </Button>
+            </Button> */}
 
             {/* Audio Player */}
             <AudioPlayer

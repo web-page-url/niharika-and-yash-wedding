@@ -258,6 +258,26 @@ const EventDetails = () => {
                 Add to Calendar
               </motion.button>
             </div>
+
+            {/* Embedded Google Map */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="mt-8 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20"
+            >
+              <iframe
+                src="https://www.google.com/maps?q=Swarn+Farm,+Pilibhit+Bypass+Rd,+near+Suresh+Sharma+Nagar,+Chauraha,+Chandpur+Bichpuri,+Bareilly,+Uttar+Pradesh+243006&output=embed&z=15"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Swarn Farm Wedding Venue Location"
+              ></iframe>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
