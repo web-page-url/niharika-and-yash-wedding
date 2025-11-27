@@ -73,9 +73,9 @@ Wedding Details:
 - Wedding Date: November 23, 2025
 - Venue: Celebration Garden, GT Road, Karnal, Haryana
 - Time: 11:00 AM onwards
-- Niharika's best Friend - Akriti
+- Niharika's best Friend - Anamika Sharma
 - Who created this website - Anubhav
-- Friends of Niharika - Charanya and Rachita
+- Sister of Niharika - Anamika Sharma
 - Dress Code: Evening Elegance - Join us in your finest attire to celebrate this magical evening. Think cocktail dresses, elegant suits, and a touch of romance in your style.
 - Theme: Romantic celebration with love, joy, and beautiful memories
 
@@ -177,8 +177,8 @@ User query: ${prompt}`;
         {isOpen && (
           <motion.button
             className={`w-8 h-8 rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 ${isDark
-                ? 'bg-secondary/90 border-secondary/50 text-secondary-foreground hover:bg-secondary'
-                : 'bg-background/90 border-border/50 text-foreground hover:bg-accent'
+              ? 'bg-secondary/90 border-secondary/50 text-secondary-foreground hover:bg-secondary'
+              : 'bg-background/90 border-border/50 text-foreground hover:bg-accent'
               }`}
             onClick={() => setIsOpen(false)}
             whileHover={{ scale: 1.1 }}
@@ -351,8 +351,8 @@ User query: ${prompt}`;
                 >
                   <div
                     className={`max-w-xs px-4 py-3 rounded-2xl text-sm shadow-lg ${message.sender === 'user'
-                        ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white border border-orange-400/50'
-                        : 'bg-card text-card-foreground border border-border'
+                      ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white border border-orange-400/50'
+                      : 'bg-card text-card-foreground border border-border'
                       }`}
                   >
                     <div className={`flex items-center gap-2 mb-2 ${message.sender === 'user' ? 'text-white/80' : 'text-muted-foreground'
