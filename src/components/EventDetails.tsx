@@ -5,14 +5,14 @@ import { Button } from "./ui/button";
 
 const EventDetails = () => {
   const openMap = () => {
-    window.open("https://maps.app.goo.gl/1txX5vX9TdXyHPco8?g_st=aw", "_blank");
+    window.open("https://maps.app.goo.gl/4Qmyn8fDGLsLK71w6?g_st=awb", "_blank");
   };
 
   const addToCalendar = () => {
     const event = {
       title: "Niharika & Yash Wedding Celebration",
       description: "Join us in celebrating the beautiful love story of Niharika and Yash. Save the date for our wedding celebration!",
-      location: "Maharajganj",
+      location: "Swarn Farm, Pilibhit Bypass Rd, near Suresh Sharma Nagar, Chauraha, Chandpur Bichpuri, Bareilly, Uttar Pradesh 243006",
       start: "2026-02-06T11:00:00",
       end: "2026-02-06T23:59:00",
     };
@@ -229,10 +229,10 @@ const EventDetails = () => {
               <MapPin className="w-6 h-6 text-purple-500" />
               <div className="text-center">
                 <p className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-1">
-                  Maharajganj
+                  Swarn Farm
                 </p>
                 <p className="text-lg text-gray-600 dark:text-gray-400">
-                  Maharajganj
+                  Pilibhit Bypass Rd, near Suresh Sharma Nagar, Chauraha, Chandpur Bichpuri, Bareilly, Uttar Pradesh 243006
                 </p>
               </div>
             </div>

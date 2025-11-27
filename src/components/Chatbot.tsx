@@ -71,7 +71,7 @@ export default function Chatbot({ isDark = false }: ChatbotProps) {
 Wedding Details:
 - Couple: Niharika and Yash
 - Wedding Date: February 6, 2026
-- Venue: Maharajganj
+- Venue: Swarn Farm, Pilibhit Bypass Rd, near Suresh Sharma Nagar, Chauraha, Chandpur Bichpuri, Bareilly, Uttar Pradesh 243006
 - Time: 11:00 AM onwards
 - Niharika's best Friend - Anamika Sharma
 - Who created this website - Anubhav

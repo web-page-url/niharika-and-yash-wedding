@@ -7,7 +7,7 @@ const Footer = () => {
     const event = {
       title: "Niharika & Yash Wedding Celebration",
       description: "Join us in celebrating the beautiful love story of Niharika and Yash. Save the date for our wedding celebration!",
-      location: "Maharajganj",
+      location: "Swarn Farm, Pilibhit Bypass Rd, near Suresh Sharma Nagar, Chauraha, Chandpur Bichpuri, Bareilly, Uttar Pradesh 243006",
       start: "2026-02-06T11:00:00",
       end: "2026-02-06T23:59:00",
     };
