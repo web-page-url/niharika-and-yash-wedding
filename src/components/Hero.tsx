@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import AudioPlayer from "./AudioPlayer";
 
 const Hero = () => {
-  const weddingDate = new Date(2025, 10, 23, 11, 0, 0); // November 23, 2025 at 11:00 AM
+  const weddingDate = new Date(2026, 1, 9, 11, 0, 0); // February 9, 2026 at 11:00 AM
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -100,11 +100,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground">
+            <h1 className="font-display text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground">
               Niharika
             </h1>
             <Heart className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 text-primary fill-primary animate-heart-beat" />
-            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground">
+            <h1 className="font-display text-2xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary-foreground">
               Yash
             </h1>
           </motion.div>

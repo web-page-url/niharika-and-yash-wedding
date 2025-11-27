@@ -13,8 +13,8 @@ const EventDetails = () => {
       title: "Niharika & Yash Wedding Celebration",
       description: "Join us in celebrating the beautiful love story of Niharika and Yash. Save the date for our wedding celebration!",
       location: "Celebration Garden, GT Road, Karnal, Haryana",
-      start: "2025-11-23T11:00:00",
-      end: "2025-11-23T23:59:00",
+      start: "2026-02-09T11:00:00",
+      end: "2026-02-09T23:59:00",
     };
 
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
@@ -30,7 +30,7 @@ const EventDetails = () => {
   };
 
   return (
-    <section id="details" className="py-20 px-4 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 dark:from-rose-950/20 dark:via-pink-950/20 dark:to-purple-950/20">
+    <section id="details" className="py-12 md:py-20 px-4 bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50 dark:from-rose-950/20 dark:via-pink-950/20 dark:to-purple-950/20">
       <div className="container mx-auto max-w-4xl">
         {/* Image Carousel */}
         <motion.div
@@ -206,7 +206,7 @@ const EventDetails = () => {
             <div className="flex items-center justify-center gap-3 mb-4">
               <Calendar className="w-6 h-6 text-rose-500" />
               <span className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-200">
-                Sunday November 23, 2025
+                Monday February 9, 2026
               </span>
             </div>
             <div className="flex items-center justify-center gap-3">

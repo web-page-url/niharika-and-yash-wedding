@@ -1,34 +1,41 @@
 import { motion } from "framer-motion";
-import { Heart, Coffee, Sparkles, Calendar } from "lucide-react";
+import { Heart, Music, Sun, Palette, Gem } from "lucide-react";
 
 const timeline = [
   {
-    icon: Coffee,
-    title: "First Meeting",
-    date: "March 2020",
-    description: "A chance encounter at a cozy café that sparked something magical.",
+    icon: Gem,
+    title: "Engagement",
+    date: "February 5, 2026",
+    description: "The beginning of our forever. Join us as we exchange rings and promises.",
     color: "text-accent",
   },
   {
-    icon: Heart,
-    title: "First Date",
-    date: "April 2020",
-    description: "An evening under the stars that lasted until dawn, filled with laughter and endless conversation.",
+    icon: Music,
+    title: "Sangeet Night",
+    date: "February 6, 2026",
+    description: "A night of music, dance, and celebration. Put on your dancing shoes!",
     color: "text-primary",
   },
   {
-    icon: Sparkles,
-    title: "Falling in Love",
-    date: "Summer 2021",
-    description: "Adventures, memories, and the realization that we had found our soulmate.",
-    color: "text-muted",
+    icon: Sun,
+    title: "Haldi Ceremony",
+    date: "February 7, 2026",
+    description: "A splash of yellow and a glow of love. Blessing the couple with turmeric and joy.",
+    color: "text-yellow-500",
   },
   {
-    icon: Calendar,
-    title: "The Proposal",
-    date: "December 2024",
-    description: "A perfect moment on a beach at sunset, where 'forever' became a beautiful reality.",
-    color: "text-accent",
+    icon: Palette,
+    title: "Mehndi",
+    date: "February 8, 2026",
+    description: "Adorning hands with intricate henna designs, symbolizing love and prosperity.",
+    color: "text-green-600",
+  },
+  {
+    icon: Heart,
+    title: "The Wedding",
+    date: "February 9, 2026",
+    description: "The big day! Witness our union as we tie the knot and start our journey together.",
+    color: "text-red-500",
   },
 ];
 
@@ -44,16 +51,16 @@ const LoveStory = () => {
           className="text-center mb-16"
         >
           <h2 className="font-display text-5xl md:text-6xl font-bold text-gradient-romantic mb-4">
-            Our Love Story
+            Wedding Celebrations
           </h2>
           <p className="text-lg text-muted-foreground">
-            Every love story is beautiful, but ours is our favorite
+            Join us in our beautiful journey of celebrations
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-accent to-primary" />
+          <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-accent to-primary" />
 
           {timeline.map((item, index) => {
             const Icon = item.icon;
@@ -66,13 +73,12 @@ const LoveStory = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`relative flex ${isEven ? "justify-start" : "justify-end"} mb-16`}
+                className={`relative flex items-center md:items-start justify-start ${!isEven && "md:justify-end"} mb-12 md:mb-16`}
               >
                 <motion.div
                   whileHover={{ scale: 1.05, boxShadow: "var(--shadow-romantic)" }}
-                  className={`w-full md:w-5/12 bg-card rounded-2xl p-6 shadow-lg border border-border ${
-                    isEven ? "md:mr-auto" : "md:ml-auto"
-                  }`}
+                  className={`w-[calc(100%-3rem)] ml-12 md:ml-0 md:w-5/12 bg-card rounded-2xl p-6 shadow-lg border border-border ${isEven ? "md:mr-auto" : "md:ml-auto"
+                    }`}
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <div className={`p-3 rounded-full bg-primary/10 ${item.color}`}>
@@ -94,7 +100,7 @@ const LoveStory = () => {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 + 0.3 }}
-                  className="absolute left-1/2 top-8 transform -translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-background shadow-glow"
+                  className="absolute left-4 md:left-1/2 top-8 transform -translate-x-1/2 w-6 h-6 rounded-full bg-primary border-4 border-background shadow-glow"
                 />
               </motion.div>
             );

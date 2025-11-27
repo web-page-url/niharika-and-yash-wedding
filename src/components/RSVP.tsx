@@ -79,7 +79,7 @@ const RSVP = () => {
   };
 
   return (
-    <section id="rsvp" className="py-20 px-4 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
+    <section id="rsvp" className="py-12 md:py-20 px-4 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
       {showConfetti && (
         <div className="absolute inset-0 pointer-events-none">
           {Array.from({ length: 50 }).map((_, i) => (

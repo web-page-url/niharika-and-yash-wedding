@@ -24,7 +24,7 @@ const App = () => (
         <Chatbot />
       </BrowserRouter>
     </TooltipProvider>
-    <RSVP />
+    {/* <RSVP /> */}
   </QueryClientProvider>
 );
 

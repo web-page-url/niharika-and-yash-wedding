@@ -8,8 +8,8 @@ const Footer = () => {
       title: "Niharika & Yash Wedding Celebration",
       description: "Join us in celebrating the beautiful love story of Niharika and Yash. Save the date for our wedding celebration!",
       location: "Celebration Garden, GT Road, Karnal, Haryana",
-      start: "2025-11-23T11:00:00",
-      end: "2025-11-23T23:59:00",
+      start: "2026-02-09T11:00:00",
+      end: "2026-02-09T23:59:00",
     };
 
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(

@@ -70,7 +70,7 @@ export default function Chatbot({ isDark = false }: ChatbotProps) {
 
 Wedding Details:
 - Couple: Niharika and Yash
-- Wedding Date: November 23, 2025
+- Wedding Date: February 9, 2026
 - Venue: Celebration Garden, GT Road, Karnal, Haryana
 - Time: 11:00 AM onwards
 - Niharika's best Friend - Anamika Sharma
