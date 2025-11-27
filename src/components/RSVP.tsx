@@ -148,7 +148,7 @@ const RSVP = () => {
               type="tel"
               value={formData.whatsapp}
               onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-              placeholder="+91 9876543210"
+              placeholder=" "
               required
               className="focus:ring-primary focus:border-primary"
             />

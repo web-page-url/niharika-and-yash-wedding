@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import AudioPlayer from "./AudioPlayer";
 
 const Hero = () => {
-  const weddingDate = new Date(2026, 1, 9, 11, 0, 0); // February 9, 2026 at 11:00 AM
+  const weddingDate = new Date(2026, 1, 6, 11, 0, 0); // February 6, 2026 at 11:00 AM
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -48,19 +48,19 @@ const Hero = () => {
       {/* Background Image */}
       <picture className="absolute inset-0">
         {/* Large screens */}
-        <source media="(min-width: 1024px)" srcSet="/rashmi-wed-2.jpeg" />
+        <source media="(min-width: 1024px)" srcSet="/Niharika-wedding-1.jpeg" />
         {/* Medium screens */}
-        <source media="(min-width: 768px)" srcSet="/rashmi-wed-2.jpeg" />
+        <source media="(min-width: 768px)" srcSet="/Niharika-wedding-1.jpeg" />
         {/* Small screens */}
         <img
-          src="/rashmi-wed-2.jpeg"
+          src="/Niharika-wedding-1.jpeg"
           alt="Niharika & Yash - Our Forever Begins"
           className="w-full h-full object-cover object-center"
           loading="eager"
           decoding="async"
         />
       </picture>
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/70 via-secondary/50 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/20 to-background/50" />
 
       {/* Floating Hearts */}
       {hearts.map((i) => (
@@ -128,12 +128,12 @@ const Hero = () => {
             {Object.entries(timeLeft).map(([unit, value]) => (
               <div
                 key={unit}
-                className="bg-card/90 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-6 shadow-romantic min-w-[70px] sm:min-w-[80px] md:min-w-[100px] flex-1 max-w-[120px]"
+                className="rounded-xl p-3 sm:p-4 md:p-6 min-w-[70px] sm:min-w-[80px] md:min-w-[100px] flex-1 max-w-[120px]"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient-romantic">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900" style={{ textShadow: '0 1px 2px rgba(255,255,255,0.8), 0 2px 4px rgba(255,255,255,0.6)' }}>
                   {value}
                 </div>
-                <div className="text-xs sm:text-sm md:text-base text-muted-foreground capitalize mt-1 sm:mt-2">
+                <div className="text-xs sm:text-sm md:text-base text-gray-800 capitalize mt-1 sm:mt-2" style={{ textShadow: '0 1px 2px rgba(255,255,255,0.8)' }}>
                   {unit}
                 </div>
               </div>

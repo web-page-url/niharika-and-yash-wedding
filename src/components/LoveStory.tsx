@@ -33,7 +33,7 @@ const timeline = [
   {
     icon: Heart,
     title: "The Wedding",
-    date: "February 9, 2026",
+    date: "February 6, 2026",
     description: "The big day! Witness our union as we tie the knot and start our journey together.",
     color: "text-red-500",
   },
@@ -41,7 +41,7 @@ const timeline = [
 
 const LoveStory = () => {
   return (
-    <section id="our-story" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+    <section id="timeline" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

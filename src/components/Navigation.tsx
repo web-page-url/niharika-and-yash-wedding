@@ -45,7 +45,7 @@ const Navigation = () => {
           >
             <Heart className="w-6 h-6 text-primary fill-primary animate-heart-beat" />
             <span className="font-display text-2xl font-bold text-gradient-romantic">
-              R & D
+              N & Y
             </span>
           </motion.div>
 
@@ -71,7 +71,7 @@ const Navigation = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {["Our Story",  "Details", ].map((item, index) => (
+            {["Our Story", "Timeline", "Gallery", "Details", "RSVP"].map((item, index) => (
               <motion.button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(" ", "-"))}
@@ -99,7 +99,7 @@ const Navigation = () => {
               className="md:hidden border-t border-border bg-background/95 backdrop-blur-md"
             >
               <div className="px-4 py-6 space-y-4">
-                {["Our Story",  "Details",].map((item, index) => (
+                {["Our Story", "Timeline", "Gallery", "Details", "RSVP"].map((item, index) => (
                   <motion.button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase().replace(" ", "-"))}

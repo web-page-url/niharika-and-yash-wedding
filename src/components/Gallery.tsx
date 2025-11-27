@@ -1,16 +1,14 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
-import couple1 from "@/assets/couple-1.jpg";
-import couple2 from "@/assets/couple-2.jpg";
-import couple3 from "@/assets/couple-3.jpg";
-import couple4 from "@/assets/couple-4.jpg";
-
 const images = [
-  { src: couple1, alt: "Niharika  & Yash  golden hour moment" },
-  { src: couple2, alt: "Niharika  & Yash  laughing together" },
-  { src: couple3, alt: "Niharika  & Yash  dancing under fairy lights" },
-  { src: couple4, alt: "Niharika  & Yash  intimate portrait" },
+  { src: "/Niharika-wedding-1.jpeg", alt: "Niharika & Yash - Beautiful moment" },
+  { src: "/Niharika-wedding-2.jpeg", alt: "Niharika & Yash - Together" },
+  { src: "/Niharika-wedding-3.jpeg", alt: "Niharika & Yash - Celebration" },
+  { src: "/Niharika-wedding-4.jpeg", alt: "Niharika & Yash - Special day" },
+  { src: "/Niharika-wedding-5.jpeg", alt: "Niharika & Yash - Joyful moment" },
+  { src: "/Niharika-wedding-6.jpeg", alt: "Niharika & Yash - Love story" },
+  { src: "/Niharika-wedding-7.jpeg", alt: "Niharika & Yash - Forever together" },
 ];
 
 const Gallery = () => {
