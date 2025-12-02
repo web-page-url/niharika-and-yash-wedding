@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
-import { Heart } from "lucide-react";
+import { Heart, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const RSVP = () => {
@@ -18,6 +18,7 @@ const RSVP = () => {
     message: "",
   });
   const [showConfetti, setShowConfetti] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,12 +52,7 @@ const RSVP = () => {
       console.log('RSVP Debug: Response ok:', response.ok);
 
       setShowConfetti(true);
-
-      toast({
-        title: "You're Part of Our Love Story! 💖",
-        description: "Thank you for your response! We can't wait to celebrate with you!",
-        duration: 5000,
-      });
+      setIsSubmitted(true);
 
       console.log('RSVP Debug: Form submission successful, showing success message');
 
@@ -65,7 +61,8 @@ const RSVP = () => {
 
       setTimeout(() => {
         setShowConfetti(false);
-      }, 3000);
+        setIsSubmitted(false);
+      }, 5000);
 
     } catch (error) {
       console.error('RSVP Debug: Error submitting form:', error);
@@ -203,6 +200,29 @@ const RSVP = () => {
             Seal Our Love! 💖
           </Button>
         </motion.form>
+
+        <AnimatePresence>
+          {isSubmitted && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5 }}
+              className="mt-6 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-md shadow-md"
+              role="alert"
+            >
+              <div className="flex">
+                <div className="py-1">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-4" />
+                </div>
+                <div>
+                  <p className="font-bold">Submitted successfully!</p>
+                  <p className="text-sm">Your response has been recorded.</p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

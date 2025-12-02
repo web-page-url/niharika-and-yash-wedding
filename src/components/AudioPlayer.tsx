@@ -3,19 +3,21 @@ import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 
 interface AudioPlayerProps {
-  src: string;
-  title?: string;
+  src: string; // The URL of the audio file
+  title?: string; // The optional title of the song
 }
 
 const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
+  // State management for the audio player's functionality
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [volume, setVolume] = useState(0.7);
-  const [isMuted, setIsMuted] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [volume, setVolume] = useState(0.7); // Default volume
+  const [isMuted, setIsMuted] = useState(false); // Mute state
+  const [isLoading, setIsLoading] = useState(true); // Loading state for the audio file
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  // Effect to set up audio event listeners
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -25,12 +27,13 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
       setIsLoading(false);
     };
 
+    // Update the current time as the audio plays
     const handleTimeUpdate = () => {
       setCurrentTime(audio.currentTime);
     };
 
     const handleEnded = () => {
-      // Restart the audio automatically when it ends
+      // Loop: Restart the audio automatically when it ends
       audio.currentTime = 0;
       setCurrentTime(0);
       audio.play().catch(error => {
@@ -45,6 +48,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
       console.error('Audio loading error');
     };
 
+    // Add event listeners to the audio element
     audio.addEventListener('loadedmetadata', handleLoadedMetadata);
     audio.addEventListener('timeupdate', handleTimeUpdate);
     audio.addEventListener('ended', handleEnded);
@@ -58,6 +62,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
     };
   }, []);
 
+  // Toggles the audio between play and pause
   const togglePlayPause = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -70,6 +75,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
     setIsPlaying(!isPlaying);
   };
 
+  // Allows the user to seek to a specific time in the audio
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -79,6 +85,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
     setCurrentTime(newTime);
   };
 
+  // Handles volume changes from a slider (Note: slider is not in the final JSX)
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -89,6 +96,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
     setIsMuted(newVolume === 0);
   };
 
+  // Toggles the mute state (Note: mute button is not in the final JSX)
   const toggleMute = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -102,6 +110,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
     }
   };
 
+  // Formats time in seconds to a "minutes:seconds" string
   const formatTime = (time: number): string => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
@@ -110,7 +119,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
 
   return (
     <>
-      {/* Floating Mobile Audio Player - Always Accessible */}
+      {/* Part 1: Floating Audio Player Button - Always Accessible */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -126,6 +135,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
           style={{ WebkitTapHighlightColor: 'transparent' }}
         >
           {isLoading ? (
+            // Loading spinner
             <div className="w-6 h-6 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin"></div>
           ) : isPlaying ? (
             <Pause className="w-6 h-6" />
@@ -135,7 +145,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
         </motion.button>
       </motion.div>
 
-      {/* Full Controls for All Devices - Below View Details */}
+      {/* Part 2: Full Controls Panel */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -152,7 +162,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
 
         {/* Progress Bar Container */}
         <div className="w-full max-w-sm bg-gradient-to-r from-rose-100/20 to-pink-100/20 p-4 rounded-xl border border-primary/10">
-          <input
+          <input // The seek/progress slider
             type="range"
             min="0"
             max={duration || 0}
@@ -162,6 +172,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, title = "" }) => {
             disabled={isLoading}
             style={{ WebkitTapHighlightColor: 'transparent' }}
           />
+          {/* Time display for current time and total duration */}
           <div className="flex justify-between text-xs text-primary-foreground/70 mt-2 font-medium">
             <span className="bg-primary/10 px-2 py-1 rounded-md">{formatTime(currentTime)}</span>
             <span className="bg-primary/10 px-2 py-1 rounded-md">{formatTime(duration)}</span>

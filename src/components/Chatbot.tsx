@@ -303,7 +303,7 @@ User query: ${prompt}`;
                       transition={{ duration: 2, repeat: Infinity }}
                     />
                   </h3>
-                  <p className="text-white/90 text-xs">Your Wedding Assistant</p>
+                  <p className="text-white/90 text-xs">AI Wedding Assistant</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 relative z-10">
